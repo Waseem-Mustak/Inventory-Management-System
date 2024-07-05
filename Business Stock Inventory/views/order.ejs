@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangladesh University Of Engineering and Technology</title>
+  <link rel="stylesheet" href="/order.css"> <!-- Include the external CSS file -->
+</head>
+<body>
+  <div class="background-image"></div>
+  <header class="header">
+    <h1><%- company %></h1>
+  </header>
+  <div class="container">
+    <% for(var i = 0; i < products.length; i++) { %>
+      <div class="person-box" data-id="<%- products[i][0] %>">
+        
+        <div class="title">Category: <%- products[i][3] %></div>
+        <div class="title">Product: <%- products[i][0] %></div>
+                  <!-- <div class="info-item">
+            <div class="info-label">branch ID: </div>
+            <div><%- products[i][1] %></div>
+          </div> -->
+          <!-- <div class="info-item">
+            <div class="info-label">Product: </div>
+            <div><%- products[i][0] %></div>
+          </div> -->
+          <!-- <div class="info-item">
+            <div class="info-label">company ID: </div>
+            <div><%- products[i][2] %></div>
+          </div> -->
+          <!-- <div class="info-item">
+            <div class="info-label">supplier ID: </div>
+            <div><%- products[i][4] %></div>
+          </div> -->
+          <div class="info-item">
+            <div class="info-label">Unit Price: </div>
+            <div><%- products[i][5] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Quantity </div>
+            <div><%- products[i][6] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Color </div>
+            <div><%- products[i][7] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">ProductSize</div>
+            <div><%- products[i][8] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Discount </div>
+            <div><%- products[i][9] %></div>
+          </div>
+        
+      </div>
+      <div class="add-order-container" id="addorderContainer">
+        <!-- Registration form title -->
+        <h2>Order</h2>
+        <% if (typeof error !== 'undefined') { %>
+            <p class="error"><%- error %></p>
+        <% } %>
+        <!-- Registration form -->
+        <form method="POST" action="/company/branch/category/product/order" id="addorderForm">
+          <!-- Input for registration username -->
+    
+     
+          <div class="form-group">
+            <label for="Quantity">Quantity:</label> 
+          <input type="number" name="Quantity"  id="Quantity" placeholder="Quantity" min="0" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="PaymentMethod">PaymentMethod</label> 
+          <input type="text" name="PaymentMethod"  id="PaymentMethod" placeholder="PaymentMethod" required>
+          </div>
+          <!-- Registration button -->
+          <button type="submit" name="action" value="addorder" class="btn">Order</button>
+          <!-- <button type="submit" name="action" value="back" class="btn">Order</button> -->
+          
+        </form>
+    </div>
+    <% } %>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get references to HTML elements
+    //   const registrationButton = document.getElementById('registrationButton');
+      const addorderContainer = document.getElementById('addorderContainer');
+      const addorderForm = document.getElementById('addorderForm');
+    //   const loginContainer = document.getElementById('loginContainer');
+    //   const backButton = document.getElementById('backButton');
+    //   const registrationCustomerButton = document.getElementById('registrationCustomerButton');
+    //   const registrationCustomerContainer = document.getElementById('registrationCustomerContainer');
+    //   const registrationCustomerForm = document.getElementById('registrationCustomerForm');
+
+      // Handle button click to toggle between login and registration forms
+      // registrationContainer.style.display = 'none'; // Hide the registration container initially
+      // registrationCustomerContainer.style.display = 'none';
+      // backButton.style.display = 'none';
+    //   registrationContainer.style.display = 'none';
+    //   loginContainer.style.display = 'block';
+    //   registrationCustomerContainer.style.display = 'none';
+    //   registrationButton.style.display = 'block';
+    //   registrationCustomerButton.style.display = 'block';
+    //   backButton.style.display = 'none';
+
+    //   registrationCustomerButton.addEventListener('click', () => {
+    //     // Show the registration container and hide the login container
+    //     registrationContainer.style.display = 'none';
+    //     loginContainer.style.display = 'none';
+    //     registrationCustomerContainer.style.display = 'block';
+    //     registrationButton.style.display = 'none';
+    //     registrationCustomerButton.style.display = 'none';
+    //     backButton.style.display = 'block';
+        
+    //   });
+
+    addorderForm.addEventListener('submit', (event) => {
+        //   loginContainer.style.display = 'block';
+        //   registrationContainer.style.display = 'none';
+        //   registrationCustomerContainer.style.display = 'none';
+        //   registrationButton.style.display = 'block';
+        //   registrationCustomerButton.style.display = 'block';
+        //   backButton.style.display = 'none';
+          
+      });
+
+    //   registrationButton.addEventListener('click', () => {
+    //     // Show the registration container and hide the login container
+    //     // registrationContainer.style.display = 'block';
+    //     // loginContainer.style.display = 'none';
+    //     // registrationButton.style.display = 'none';
+    //     // backButton.style.display = 'block';
+
+    //     registrationContainer.style.display = 'block';
+    //     loginContainer.style.display = 'none';
+    //     registrationCustomerContainer.style.display = 'none';
+    //     registrationButton.style.display = 'none';
+    //     registrationCustomerButton.style.display = 'none';
+    //     backButton.style.display = 'block';
+    //   });
+
+    //   backButton.addEventListener('click', () => {
+    //     // Show the registration container and hide the login container
+    //     // registrationContainer.style.display = 'none';
+    //     // loginContainer.style.display = 'block';
+    //     // registrationButton.style.display = 'block';
+    //     // backButton.style.display = 'none';
+
+    //     registrationContainer.style.display = 'none';
+    //     loginContainer.style.display = 'block';
+    //     registrationCustomerContainer.style.display = 'none';
+    //     registrationButton.style.display = 'block';
+    //     registrationCustomerButton.style.display = 'block';
+    //     backButton.style.display = 'none';
+    //   });
+
+    //   registrationForm.addEventListener('submit', (event) => {
+    //       // loginContainer.style.display = 'block';
+    //       // registrationContainer.style.display = 'none';
+
+    //     registrationContainer.style.display = 'none';
+    //     loginContainer.style.display = 'block';
+    //     registrationCustomerContainer.style.display = 'none';
+    //     registrationButton.style.display = 'block';
+    //     registrationCustomerButton.style.display = 'block';
+    //     backButton.style.display = 'none';
+    //   });
+
+      // Clear input fields on page load
+      document.getElementById('PaymentMethod').value = '';
+      document.getElementById('Quantity').value = '';
+    //   document.getElementById('regUsername').value = '';
+    //   document.getElementById('regPassword').value = '';
+    //   document.getElementById('ownerId').value = '';
+    //   document.getElementById('ownerName').value = '';
+    //   document.getElementById('companyId').value = '';
+    //   document.getElementById('companyName').value = '';
+    //   document.getElementById('regCustomerUsername').value = '';
+    //   document.getElementById('regCustomerPassword').value = '';
+    //   document.getElementById('companyId_Customer').value = '';
+    //   document.getElementById('CustomerName').value = '';
+    });
+  </script>
+
+  
+  
+  
+</body>
+</html>

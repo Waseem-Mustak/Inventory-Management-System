@@ -1,0 +1,257 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set box-sizing to border-box for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121314;
+    margin: 0;
+    padding: 0;
+    background: url('company.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .dashboard {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #5f6060;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    font-style: italic;
+    color: #f7eab9;
+  }
+  
+  .section-links {
+    margin-top: 20px;
+  }
+  
+  .section-links a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .section-links a:hover {
+    background-color: #2980b9;
+  }
+  
+  #registrationButton {
+    /* position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #3498db;
+    cursor: pointer; */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #3498db;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust padding to make the button wider */
+    font-size: 14px; /* Increase font size for better visibility */
+    border: none;
+    border-radius: 5px; /* Increase border radius for a rounded look */
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+  
+  }
+  
+  #registrationButton:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  #registrationSupplierButton {
+    /* position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #3498db;
+    cursor: pointer; */
+    position: fixed;
+    top: 10px;
+    right: 170px;
+    z-index: 1000;
+    background-color: #3498db;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust padding to make the button wider */
+    font-size: 14px; /* Increase font size for better visibility */
+    border: none;
+    border-radius: 5px; /* Increase border radius for a rounded look */
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+  
+  }
+  
+  #registrationSupplierButton:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .btn_back {
+    /* position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #3498db;
+    cursor: pointer; */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #3498db;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust padding to make the button wider */
+    font-size: 14px; /* Increase font size for better visibility */
+    border: none;
+    border-radius: 5px; /* Increase border radius for a rounded look */
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+  
+  }
+  
+  .btn_back:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* Additional styles for add-branch-container */
+  
+.add-branch-container {
+  background-color: #5f6060;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  max-width: 100%;
+  display: block;
+  margin: 20px auto; /* Adjust margin for spacing */
+  text-align: left; /* Align text to the left */
+  color: #fff;
+  display: block; /* Hide the container initially */
+}
+
+/* Add space above the container title */
+.add-branch-container h2 {
+  margin-top: 0;
+}
+
+/* Add space below the container */
+.add-branch-container {
+  margin-bottom: 20px;
+}
+
+/* Adjustments for specific elements in add-branch-container */
+.add-branch-container .form-group {
+  margin-bottom: 15px;
+}
+
+.add-branch-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-branch-container input[type="text"],
+.add-branch-container input[type="password"],
+.add-branch-container input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #f5efef;
+  border-radius: 3px;
+  background-color: #272828;
+  color: #fff;
+  margin-bottom: 10px; /* Add margin to separate input fields */
+}
+
+.add-branch-container .btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-branch-container .btn:hover {
+  background-color: #2980b9;
+}
+
+/* Adjust the width and alignment of the submit button */
+.add-branch-container .btn {
+  width: auto;
+  margin-left: auto; /* Move the button to the right side */
+  margin-right: 0; /* Remove margin from the right side */
+}
+
+
+  
+
+
+
+.add-supplier-container {
+  background-color: #0c4270;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(191, 206, 222, 0.2);
+  width: 300px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #f5efef;
+  border-radius: 3px;
+  background-color: #95d6ff;
+  color: #063f50;
+}
+  
+.btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}

@@ -1,0 +1,174 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set box-sizing to border-box for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Apply basic styling to body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121314;
+  margin: 0;
+  padding: 0;
+  background: url('loginpage.png') no-repeat center center fixed;
+  background-size: cover;  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Styling for registration button */
+#registrationButton {
+  /* position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #3498db;
+  cursor: pointer; */
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #3498db;
+  cursor: pointer;
+  padding: 10px 20px; /* Adjust padding to make the button wider */
+  font-size: 14px; /* Increase font size for better visibility */
+  border: none;
+  border-radius: 5px; /* Increase border radius for a rounded look */
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+
+}
+
+#registrationButton:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#registrationCustomerButton {
+  /* position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #3498db;
+  cursor: pointer; */
+  position: fixed;
+  top: 10px;
+  right: 210px;
+  z-index: 1000;
+  background-color: #3498db;
+  cursor: pointer;
+  padding: 10px 20px; /* Adjust padding to make the button wider */
+  font-size: 14px; /* Increase font size for better visibility */
+  border: none;
+  border-radius: 5px; /* Increase border radius for a rounded look */
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+
+}
+
+#registrationCustomerButton:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn_back {
+  /* position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #3498db;
+  cursor: pointer; */
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #3498db;
+  cursor: pointer;
+  padding: 10px 20px; /* Adjust padding to make the button wider */
+  font-size: 14px; /* Increase font size for better visibility */
+  border: none;
+  border-radius: 5px; /* Increase border radius for a rounded look */
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+
+}
+
+.btn_back:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Container styling */
+.login-container,
+.registration-customer-container,
+.registration-container {
+  background-color: #5f6060;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+/* Form element styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #f5efef;
+  border-radius: 3px;
+  background-color: #272828;
+  color: #fff;
+}
+
+.btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+
+/* Adjustments for specific elements */
+.login-form {
+  margin-top: 20px;
+}
+
+/* Align form labels to left */
+.form-group label {
+  text-align: left;
+}
+
+/* Additional styles for h2 in registration container */
+.registration-container h2 {
+  margin-bottom: 20px;
+}
+
+/* Add space above the error message */
+.error {
+  margin-top: 10px;
+}

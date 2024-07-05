@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangladesh University Of Engineering and Technology</title>
+  <link rel="stylesheet" href="/branch.css"> <!-- Include the external CSS file -->
+</head>
+<body>
+  <div class="background-image"></div>
+  <button id="addProductCatagory">Add New Product</button>
+  <button id="registrationEmployeeButton">Register New Employee</button>
+  <button id="deleteProductButton">Delete Product</button>
+  <button id="backButton" name="action" value="back" class="btn_back">Back</button>
+  <div class="container" id="containerid">
+    <!-- <div class="logo"> -->
+      <!-- <img src="/buet.png" alt="University Logo"> -->
+    <!-- </div> -->
+    <div class="title"><%- company %></div>
+    <% if (typeof error !== 'undefined') { %>
+      <p class="error"><%- error %></p>
+    <% } %>
+    <div class="table-container">
+    <table class="departments-table">
+      <thead>
+  
+      </thead>
+      <tbody>
+        <% for(var i=0 ; i<branch_info.length ; i++){ %>
+          <tr>
+            <td>Branch ID: <%- branch_info[i][0] %></td></tr>
+           <tr> <td>Company ID: <%- branch_info[i][1] %></td></tr>
+           <tr><td>Manager Name:<%- branch_info[i][2] %></td></tr>
+           <tr> <td>Location: <%- branch_info[i][3] %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-links">
+    <a href="/company/branch/category">Product Category</a>
+    <a href="/employee">Order List</a>
+    <a href="/buyinfo">Buy Info</a>
+    <a href="/sellinfo">Sell Info</a>
+    <!-- <a href="suppliers.html">Supplier Information</a> -->
+    <!-- <a href="products.html">Product Details</a> -->
+    <!-- Add more links as needed -->
+  </div>
+  </div>
+  <div class="registration-employee-container" id="registrationEmployeeContainer">
+    <!-- Registration form title -->
+    <h2>Register New Employee</h2>
+    <!-- Registration form -->
+    <form method="POST" action="/branch" id="registrationEmployeeForm">
+      <!-- Input for registration username -->
+      <div class="form-group">
+        <label for="regEmployeeUsername">Employee Username:</label> 
+        <input type="text" name="regEmployeeUsername" id="regEmployeeUsername" placeholder="Username" required>
+      </div>
+      <!-- Input for registration password -->
+      <div class="form-group">
+        <label for="regEmployeePassword">Employee Password:</label>
+        <input type="password" name="regEmployeePassword" id="regEmployeePassword" placeholder="Password" required>
+      </div>
+      <!-- Input for owner name -->
+      <div class="form-group">
+        <label for="EmployeeName">Employee Name:</label>
+        <input type="text" name="EmployeeName" id="EmployeeName" placeholder="Employee Name" required>
+      </div>
+      <!-- Input for company ID -->
+      <div class="form-group">
+        <label for="salary">Salary:</label>
+        <input type="number" name="salary" id="salary" placeholder="Salary" required>
+      </div>
+      <!-- Registration button -->
+      <button type="submit" name="action" value="reg-employee-user" class="btn">Register</button>
+      
+    </form>
+  </div>
+
+  <div class="add-productCategory-container" id="addProductCategoryContainer">
+    <!-- Registration form title -->
+    <h2>Add New Product</h2>
+    <!-- Registration form -->
+    <form method="POST" action="/branch" id="addProductCategoryForm">
+      <!-- Input for registration username -->
+      <div class="form-group">
+        <label for="Category">Product Category:</label> 
+        <input type="text" name="Category" id="Category" placeholder="Category" required>
+      </div>
+      <div class="form-group">
+        <label for="ProductName">Product Name:</label> 
+        <input type="text" name="ProductName" id="ProductName" placeholder="ProductName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="per_unit_Price">Per Unit Price:</label> 
+      <input type="number" name="per_unit_Price"  id="per_unit_Price" placeholder="Price" min="0" required>
+      </div>
+      <div class="form-group">
+        <label for="Quantity">Quantity:</label> 
+      <input type="number" name="Quantity"  id="Quantity" placeholder="Quantity" min="0" required>
+      </div>
+      <div class="form-group">
+        <label for="Color">Color:</label> 
+      <input type="text" name="Color"  id="Color" placeholder="Color" required>
+      </div>
+      <div class="form-group">
+        <label for="Size">Size:</label> 
+      <input type="text" name="Size"  id="Size" placeholder="Size"  required>
+      </div>
+      <div class="form-group">
+        <label for="Discount">Discount:</label> 
+      <input type="number" name="Discount"  id="Discount" placeholder="Discount" min="0" required>
+      </div>
+      <!-- Registration button -->
+      <button type="submit" name="action" value="addCategory" class="btn">Add</button>
+      
+    </form>
+  </div>
+
+  <div class="delete-product-container" id="deleteProductContainer">
+    <!-- Registration form title -->
+    <h2>Delete Product</h2>
+    <!-- Registration form -->
+    <form method="POST" action="/branch" id="deleteProductForm">
+      <!-- Input for registration username -->
+
+      <div class="form-group">
+        <label for="ProductName_d">Product Name:</label> 
+        <input type="text" name="ProductName_d" id="ProductName_d" placeholder="ProductName" required>
+      </div>
+      <!-- Registration button -->
+      <button type="submit" name="action" value="deleteProduct" class="btn">Delete</button>
+      
+    </form>
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get references to HTML elements
+      //buttons
+      const registrationEmployeeButton = document.getElementById('registrationEmployeeButton');
+      const backButton = document.getElementById('backButton');
+      const addProductCatagory = document.getElementById('addProductCatagory');
+      const deleteProductButton = document.getElementById('deleteProductButton');
+
+      const containerid = document.getElementById('containerid');
+      const registrationEmployeeContainer = document.getElementById('registrationEmployeeContainer');
+      const registrationEmployeeForm = document.getElementById('registrationEmployeeForm');
+
+      const deleteProductContainer = document.getElementById('deleteProductContainer');
+      const deleteProductForm = document.getElementById('deleteProductForm');
+
+      const addProductCategoryContainer = document.getElementById('addProductCategoryContainer');
+      const addProductCategoryForm = document.getElementById('addProductCategoryForm');
+      
+      
+
+
+      // Handle button click to toggle between login and registration forms
+      // registrationContainer.style.display = 'none'; // Hide the registration container initially
+      // registrationCustomerContainer.style.display = 'none';
+      // backButton.style.display = 'none';
+      registrationEmployeeContainer.style.display = 'none';
+      containerid.style.display = 'block';
+      registrationEmployeeButton.style.display = 'block';
+      addProductCatagory.style.display = 'block';
+      backButton.style.display = 'none';
+      addProductCategoryContainer.style.display = 'none';
+      deleteProductContainer.style.display = 'none';
+      deleteProductButton.style.display = 'block';
+
+      deleteProductButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        registrationEmployeeContainer.style.display = 'none';
+        containerid.style.display = 'none';
+        registrationEmployeeButton.style.display = 'none';
+        addProductCatagory.style.display = 'none';
+        backButton.style.display = 'block';
+        addProductCategoryContainer.style.display = 'none';
+        deleteProductContainer.style.display = 'block';
+        deleteProductButton.style.display = 'none';
+        
+      });
+
+      deleteProductForm.addEventListener('submit', (event) => {
+        registrationEmployeeContainer.style.display = 'none';
+        containerid.style.display = 'block';
+        registrationEmployeeButton.style.display = 'block';
+        addProductCatagory.style.display = 'block';
+        backButton.style.display = 'none';
+        addProductCategoryContainer.style.display = 'none';
+        deleteProductContainer.style.display = 'none';
+        deleteProductButton.style.display = 'block';
+          
+      });
+
+      addProductCatagory.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        registrationEmployeeContainer.style.display = 'none';
+        containerid.style.display = 'none';
+        registrationEmployeeButton.style.display = 'none';
+        addProductCatagory.style.display = 'none';
+        backButton.style.display = 'block';
+        addProductCategoryContainer.style.display = 'block';
+        deleteProductContainer.style.display = 'none';
+        deleteProductButton.style.display = 'none';
+        
+      });
+
+      addProductCategoryForm.addEventListener('submit', (event) => {
+        registrationEmployeeContainer.style.display = 'none';
+        containerid.style.display = 'block';
+        registrationEmployeeButton.style.display = 'block';
+        addProductCatagory.style.display = 'block';
+        backButton.style.display = 'none';
+        addProductCategoryContainer.style.display = 'none';
+        deleteProductContainer.style.display = 'none';
+        deleteProductButton.style.display = 'block';
+          
+      });
+
+
+      registrationEmployeeButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        registrationEmployeeContainer.style.display = 'block';
+        containerid.style.display = 'none';
+        registrationEmployeeButton.style.display = 'none';
+        addProductCatagory.style.display = 'none';
+        backButton.style.display = 'block';
+        addProductCategoryContainer.style.display = 'none';
+        deleteProductContainer.style.display = 'none';
+        deleteProductButton.style.display = 'none';
+        
+      });
+
+      registrationEmployeeForm.addEventListener('submit', (event) => {
+        registrationEmployeeContainer.style.display = 'none';
+        containerid.style.display = 'block';
+        registrationEmployeeButton.style.display = 'block';
+        addProductCatagory.style.display = 'block';
+        backButton.style.display = 'none';
+        addProductCategoryContainer.style.display = 'none';
+        deleteProductContainer.style.display = 'none';
+        deleteProductButton.style.display = 'block';
+          
+      });
+
+      
+
+      backButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        // registrationContainer.style.display = 'none';
+        // loginContainer.style.display = 'block';
+        // registrationButton.style.display = 'block';
+        // backButton.style.display = 'none';
+
+        registrationEmployeeContainer.style.display = 'none';
+        containerid.style.display = 'block';
+        registrationEmployeeButton.style.display = 'block';
+        addProductCatagory.style.display = 'block';
+        backButton.style.display = 'none';
+        addProductCategoryContainer.style.display = 'none';
+        deleteProductContainer.style.display = 'none';
+        deleteProductButton.style.display = 'block';
+      });
+
+
+      // Clear input fields on page load
+      document.getElementById('regEmployeeUsername').value = '';
+      document.getElementById('regEmployeePassword').value = ''; 
+      document.getElementById('EmployeeName').value = '';
+      document.getElementById('salary').value = '';
+      document.getElementById('Category').value = '';
+      document.getElementById('ProductName').value = '';
+      document.getElementById('per_unit_Price').value = '';
+      document.getElementById('Quantity').value = '';
+      document.getElementById('Color').value = '';
+      document.getElementById('Size').value = '';
+      document.getElementById('Discount').value = '';
+      document.getElementById('ProductName_d').value = '';
+      // document.getElementById('companyId_Customer').value = '';
+      // document.getElementById('CustomerName').value = '';
+    });
+  </script>
+</body>
+</html>

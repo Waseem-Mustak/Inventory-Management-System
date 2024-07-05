@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangladesh University Of Engineering and Technology</title>
+  <link rel="stylesheet" href="/sellinfo.css"> <!-- Include the external CSS file -->
+</head>
+<body>
+  <div class="container">
+    <!-- <div class="logo"> -->
+      <!-- <img src="/buet.png" alt="University Logo"> -->
+    <!-- </div> -->
+    <div class="title"><%- company %></div>
+    <div class="table-container">
+    <table class="departments-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <!-- <th>Branch</th> -->
+          <th>Sell Date</th>
+          <th>Quantity</th>
+          <th>Payment Method</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0 ; i<order_request.length ; i++){ %>
+          <tr>
+            <td> <%- order_request[i][1] %></td>
+            <td> <%- order_request[i][4] %></td>
+            <td> <%- order_request[i][5] %></td>
+            <td> <%- order_request[i][6] %></td>
+            <td> <%- order_request[i][7] %></td>
+            <!-- <td class="approve-column" data-branch-id="<%- order_request[i][0] %>">Approve</td> -->
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+  </div>
+    <!-- <script>
+        const approveColumns = document.querySelectorAll(".approve-column");
+
+        approveColumns.forEach(column => {
+            column.addEventListener("click", async function() {
+                const buy_order_id = column.getAttribute("data-branch-id");
+                
+
+                // Make an HTTP POST request to your server with the branch ID
+                
+
+                // Change the cell content and background color
+                if (column.textContent === "Approve") {
+                    column.textContent = "Approved";
+                    column.style.color = "white";
+                    column.style.backgroundColor= "blue";
+
+                    console.log(buy_order_id);
+
+                    const response = await fetch("/supplier", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ buy_order_id })
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error("Network response was not ok.");
+                    })
+                    .then(data => {
+                        // Handle the response from the server if needed
+                        if(data.shouldNavigate)
+                        {
+                            // do nothing
+                            // window.location.href = '/company';   
+                        }
+                        console.log("Server Response:", data);
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+                    } 
+                    // else {
+                    //     column.textContent = "Approve";
+                    //     column.style.color = "";
+                    //     column.style.backgroundColor = "";
+
+                    // }
+            });
+        });
+    </script> -->
+
+  <!-- <script>
+    const approveColumns = document.querySelectorAll(".approve-column");
+
+    approveColumns.forEach(column => {
+        column.addEventListener("click",async function () {
+            console.log("Clicked on person-box");
+            const buy_order_id = box.getAttribute('data-id');
+
+            const response = await fetch('/company/branch_table', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ branchId }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Here you can make a decision based on the response data
+                if (data.shouldNavigate) {
+                // Navigate to another page
+                window.location.href = '/company/branch';
+                } else {
+                // Do something else
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors here
+            });
+            if (column.textContent === "Approve") {
+                column.textContent = "Approved";
+                column.style.color = "green";
+                column.style.backgroundColor= "blue";
+            } else {
+                column.textContent = "Approve";
+                column.style.color = "";
+                column.style.backgroundColor = "";
+
+            }
+        });
+    });
+</script> -->
+
+</body>
+</html>

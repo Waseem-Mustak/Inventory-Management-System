@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Set character encoding and viewport for responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <!-- Link to external CSS file for styling -->
+  <link rel="stylesheet" href="logIn.css">
+</head> 
+<body>
+  <!-- Button to toggle registration form display -->
+  <button id="registrationButton">Register New Company</button>
+  <button id="registrationCustomerButton">Register As Customer</button>
+  <button  id="backButton" name="action" value="back" class="btn_back">Back</button>
+
+  <!-- Container for the login form -->
+  <div class="login-container" id="loginContainer">
+    <!-- Login form title -->
+    <h2>Login</h2>
+    <!-- Display error message if provided -->
+    <% if (typeof error !== 'undefined') { %>
+        <p class="error"><%- error %></p>
+    <% } %>
+    <!-- Login form -->
+    <form class="login-form" action="#" method="post">
+      <!-- Input for username -->
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <!-- Input for password -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <!-- Login button -->
+      <button type="submit" name="action" value="login-user" class="btn">Login</button>
+    </form>
+  </div>
+
+  <!-- Container for the registration form -->
+  <div class="registration-container" id="registrationContainer">
+    <!-- Registration form title -->
+    <h2>Register New Company</h2>
+    <!-- Registration form -->
+    <form method="POST" action="/" id="registrationForm">
+      <!-- Input for registration username -->
+      <div class="form-group">
+        <label for="regUsername">Username:</label>
+        <input type="text" name="regUsername" id="regUsername" placeholder="Username" required>
+      </div>
+      <!-- Input for registration password -->
+      <div class="form-group">
+        <label for="regPassword">Password:</label>
+        <input type="password" name="regPassword" id="regPassword" placeholder="Password" required>
+      </div>
+      <!-- Input for owner ID -->
+      <!-- <div class="form-group">
+        <label for="ownerId">Owner ID:</label>
+        <input type="number" name="ownerId" id="ownerId" placeholder="Owner ID" required>
+      </div> -->
+      <!-- Input for owner name -->
+      <div class="form-group">
+        <label for="ownerName">Owner Name:</label>
+        <input type="text" name="ownerName" id="ownerName" placeholder="Owner Name" required>
+      </div>
+      <!-- Input for company name -->
+      <div class="form-group">
+        <label for="companyName">Company Name:</label>
+        <input type="text" name="companyName" id="companyName" placeholder="Company Name" required>
+      </div>
+      <!-- Input for company ID -->
+      <div class="form-group">
+        <label for="companyId">Company ID:</label>
+        <input type="number" name="companyId" id="companyId" placeholder="Company ID" required>
+      </div>
+      <!-- Registration button -->
+      <button type="submit" name="action" value="reg-user" class="btn">Register</button>
+      
+    </form>
+  </div>
+
+  <div class="registration-customer-container" id="registrationCustomerContainer">
+    <!-- Registration form title -->
+    <h2>Register As Customer</h2>
+    <!-- Registration form -->
+    <form method="POST" action="/" id="registrationCustomerForm">
+      <!-- Input for registration username -->
+      <div class="form-group">
+        <label for="regCustomerUsername">Customer Username:</label>
+        <input type="text" name="regCustomerUsername" id="regCustomerUsername" placeholder="Username" required>
+      </div>
+      <!-- Input for registration password -->
+      <div class="form-group">
+        <label for="regCustomerPassword">Customer Password:</label>
+        <input type="password" name="regCustomerPassword" id="regCustomerPassword" placeholder="Password" required>
+      </div>
+      
+      <!-- Input for customer name -->
+      <div class="form-group">
+        <label for="CustomerName">Customer Name:</label>
+        <input type="text" name="CustomerName" id="CustomerName" placeholder="Customer Name" required>
+      </div>
+      <!-- Input for company ID -->
+      <div class="form-group">
+        <label for="companyId_Customer">Company ID:</label>
+        <input type="number" name="companyId_Customer" id="companyId_Customer" placeholder="Company ID" required>
+      </div>
+      <!-- Registration button -->
+      <button type="submit" name="action" value="reg-customer-user" class="btn">Register</button>
+      
+    </form>
+  </div>
+
+  <!-- JavaScript to handle button click and input clearing -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get references to HTML elements
+      const registrationButton = document.getElementById('registrationButton');
+      const registrationContainer = document.getElementById('registrationContainer');
+      const registrationForm = document.getElementById('registrationForm');
+      const loginContainer = document.getElementById('loginContainer');
+      const backButton = document.getElementById('backButton');
+      const registrationCustomerButton = document.getElementById('registrationCustomerButton');
+      const registrationCustomerContainer = document.getElementById('registrationCustomerContainer');
+      const registrationCustomerForm = document.getElementById('registrationCustomerForm');
+
+      // Handle button click to toggle between login and registration forms
+      // registrationContainer.style.display = 'none'; // Hide the registration container initially
+      // registrationCustomerContainer.style.display = 'none';
+      // backButton.style.display = 'none';
+      registrationContainer.style.display = 'none';
+      loginContainer.style.display = 'block';
+      registrationCustomerContainer.style.display = 'none';
+      registrationButton.style.display = 'block';
+      registrationCustomerButton.style.display = 'block';
+      backButton.style.display = 'none';
+
+      registrationCustomerButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        registrationContainer.style.display = 'none';
+        loginContainer.style.display = 'none';
+        registrationCustomerContainer.style.display = 'block';
+        registrationButton.style.display = 'none';
+        registrationCustomerButton.style.display = 'none';
+        backButton.style.display = 'block';
+        
+      });
+
+      registrationCustomerForm.addEventListener('submit', (event) => {
+          loginContainer.style.display = 'block';
+          registrationContainer.style.display = 'none';
+          registrationCustomerContainer.style.display = 'none';
+          registrationButton.style.display = 'block';
+          registrationCustomerButton.style.display = 'block';
+          backButton.style.display = 'none';
+          
+      });
+
+      registrationButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        // registrationContainer.style.display = 'block';
+        // loginContainer.style.display = 'none';
+        // registrationButton.style.display = 'none';
+        // backButton.style.display = 'block';
+
+        registrationContainer.style.display = 'block';
+        loginContainer.style.display = 'none';
+        registrationCustomerContainer.style.display = 'none';
+        registrationButton.style.display = 'none';
+        registrationCustomerButton.style.display = 'none';
+        backButton.style.display = 'block';
+      });
+
+      backButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        // registrationContainer.style.display = 'none';
+        // loginContainer.style.display = 'block';
+        // registrationButton.style.display = 'block';
+        // backButton.style.display = 'none';
+
+        registrationContainer.style.display = 'none';
+        loginContainer.style.display = 'block';
+        registrationCustomerContainer.style.display = 'none';
+        registrationButton.style.display = 'block';
+        registrationCustomerButton.style.display = 'block';
+        backButton.style.display = 'none';
+      });
+
+      registrationForm.addEventListener('submit', (event) => {
+          // loginContainer.style.display = 'block';
+          // registrationContainer.style.display = 'none';
+
+        registrationContainer.style.display = 'none';
+        loginContainer.style.display = 'block';
+        registrationCustomerContainer.style.display = 'none';
+        registrationButton.style.display = 'block';
+        registrationCustomerButton.style.display = 'block';
+        backButton.style.display = 'none';
+      });
+
+      // Clear input fields on page load
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+      document.getElementById('regUsername').value = '';
+      document.getElementById('regPassword').value = '';
+      // document.getElementById('ownerId').value = '';
+      document.getElementById('ownerName').value = '';
+      document.getElementById('companyId').value = '';
+      document.getElementById('companyName').value = '';
+      document.getElementById('regCustomerUsername').value = '';
+      document.getElementById('regCustomerPassword').value = '';
+      document.getElementById('companyId_Customer').value = '';
+      document.getElementById('CustomerName').value = '';
+    });
+  </script>
+</body>
+</html>

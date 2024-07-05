@@ -1,0 +1,173 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    color: #21466f;
+    padding: 0;
+}
+
+body, h2, h3, p, ul, li {
+    margin: 0;
+    color: #fff;
+    padding: 0;
+}
+
+
+/* Set box-sizing to border-box for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Apply basic styling to body with background image */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f1f1; /* Lighter color for the entire page background */
+    color: #1c0404; /* Darker color for the text inside the container */
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+    background-image: url('employee.png'); /* Adjust with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    color: #2b0303;
+    margin-top: 20px;
+}
+
+.category {
+    margin-top: 15rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+}
+
+.person-box {
+    background-color: #efdbdc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: calc(50% - 10px); /* Adjust the width for two boxes with space between */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.person-box:hover {
+    background-color: #f88d8f;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    color: #240608;
+    margin-bottom: 10px;
+}
+
+.info-label {
+    font-weight: bold;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-label {
+    width: 120px;
+    margin-right: 15px;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007BFF;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.log-out-button {
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Move the add-order-container to the right side */
+.add-order-container {
+    background-color: #0c4270;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(191, 206, 222, 0.2);
+    width: 300px;
+    max-width: 100%;
+    display: block;
+    margin: 10px 0;
+    text-align: left;
+    color: #fff;
+    float: right;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f5efef;
+    border-radius: 3px;
+    background-color: #95d6ff;
+    color: #063f50;
+}
+
+.btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}

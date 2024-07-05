@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Dashboard</title>
+  <link rel="stylesheet" href="/company.css">
+</head>
+<body>
+  <button id="registrationButton">Add New Branch</button>
+  <button id="registrationSupplierButton">Add New Supplier</button>
+  <button  id="backButton" name="action" value="back" class="btn_back">Back</button>
+  
+
+
+
+  <div class="dashboard" id="companydetails">
+    <h1>Welcome to Your <%- company %></h1>
+    <% if (typeof error !== 'undefined') { %>
+      <p class="error"><%- error %></p>
+    <% } %>
+    <div class="section-links">
+      <a href="/company/branch_table">Branches Information</a>
+      <form  class="dropdown">
+        <select id="branch-select">
+          <option value="" disabled selected>Select Branch</option>
+          <% for(var i = 0 ; i< branches.length ; i++){ %>
+            <option name="dropdown_box_value" value="<%=branches[i][1]%>"> <%= branches[i][0] %> </option>
+          <% } %>
+        </select>
+        <!-- <button id="get-value-button">Get Selected Value</button> -->
+        <button type="submit" name="action" value="dropdown_value_submit" class="drop_btn" id="get-value-button">Get Selected Value</button>
+      </form>
+      <a href="employees.html">Employee Information</a>
+      <a href="customers.html">Customer Information</a>
+      <a href="suppliers.html">Supplier Information</a>
+      <a href="products.html">Product Details</a>
+      <!-- Add more links as needed -->
+    </div>
+  </div>
+
+  <div class="add-branch-container" id="addBranchContainer">
+    <!-- Add Branch form title -->
+    <h2>Add New Branch</h2>
+    
+    <!-- Add Branch form -->
+    <form method="POST" action="/company" id="addBranchForm">
+      <!-- Input for Manager's Username -->
+      <div class="form-group">
+        <label for="managerUsername">Manager's Username:</label>
+        <input type="text" name="managerUsername" id="managerUsername" placeholder="Manager's Username" required>
+      </div>
+      <!-- Input for Manager's Password -->
+      <div class="form-group">
+        <label for="managerPassword">Manager's Password:</label>
+        <input type="password" name="managerPassword" id="managerPassword" placeholder="Manager's Password" required>
+      </div>
+      <!-- Input for Manager's Name -->
+      <div class="form-group">
+        <label for="managerName">Manager's Name:</label>
+        <input type="text" name="managerName" id="managerName" placeholder="Manager's Name" required>
+      </div>
+      <!-- Input for Branch Location -->
+      <div class="form-group">
+        <label for="branchLocation">Branch Location:</label>
+        <input type="text" name="branchLocation" id="branchLocation" placeholder="Branch Location" required>
+      </div>
+      <!-- Input for Manager's Salary -->
+      <div class="form-group">
+        <label for="managerSalary">Manager's Salary:</label>
+        <input type="number" name="managerSalary" id="managerSalary" placeholder="Manager's Salary" required>
+      </div>
+      <!-- Add Branch button -->
+      <button type="submit" name="action" value="add-branch" class="btn">Add Branch</button>
+    </form>
+  </div>
+
+  <div class="add-supplier-container" id="addSupplierContainer">
+    <!-- Add Branch form title -->
+    <h2>Add New Supplier</h2>
+    
+    <!-- Add Branch form -->
+    <form method="POST" action="/company" id="addSupplierForm">
+      <!-- Input for Manager's Username -->
+      <div class="form-group">
+        <label for="supplierUsername">Supplier's Username:</label>
+        <input type="text" name="supplierUsername" id="supplierUsername" placeholder="Supplier's Username" required>
+      </div>
+      <!-- Input for Manager's Password -->
+      <div class="form-group">
+        <label for="supplierPassword">Supplier's Password:</label>
+        <input type="password" name="supplierPassword" id="supplierPassword" placeholder="Supplier's Password" required>
+      </div>
+      <!-- Input for Manager's Name -->
+      <div class="form-group">
+        <label for="supplierName">Supplier's Name:</label>
+        <input type="text" name="supplierName" id="supplierName" placeholder="Supplier's Name" required>
+      </div>
+      <!-- Add Branch button -->
+      <button type="submit" name="action" value="add-supplier" class="btn">Add Supplier</button>
+    </form>
+  </div>
+  
+
+  <script>
+      const registrationButton = document.getElementById('registrationButton');
+      const addBranchContainer = document.getElementById('addBranchContainer');
+      const addBranchForm = document.getElementById('addBranchForm');
+      const companydetails = document.getElementById('companydetails');
+      const backButton = document.getElementById('backButton');
+    const getValueButton = document.getElementById('get-value-button');
+    const branchSelect = document.getElementById('branch-select');
+
+
+    //supplier
+    const registrationSupplierButton = document.getElementById('registrationSupplierButton');
+    const addSupplierContainer = document.getElementById('addSupplierContainer');
+    const addSupplierForm = document.getElementById('addSupplierForm');
+
+
+    addBranchContainer.style.display = 'none'; 
+    addSupplierContainer.style.display = 'none';
+    companydetails.style.display = 'block';
+    backButton.style.display = 'none';
+    registrationButton.style.display = 'block';
+    registrationSupplierButton.style.display = 'block';
+      
+
+    registrationSupplierButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        // addBranchContainer.style.display = 'block';
+        // companydetails.style.display = 'none';
+        // registrationButton.style.display = 'none';
+        // backButton.style.display = 'block';
+
+        addBranchContainer.style.display = 'none'; 
+        addSupplierContainer.style.display = 'block';
+        companydetails.style.display = 'none';
+        backButton.style.display = 'block';
+        registrationButton.style.display = 'none';
+        registrationSupplierButton.style.display = 'none';
+      });
+
+      addSupplierForm.addEventListener('submit', (event) => {
+        // companydetails.style.display = 'block';
+        //   addBranchContainer.style.display = 'none';
+        //   backButton.style.display = 'none';
+        //   registrationButton.style.display = 'block';
+        addBranchContainer.style.display = 'none'; 
+        addSupplierContainer.style.display = 'none';
+        companydetails.style.display = 'block';
+        backButton.style.display = 'none';
+        registrationButton.style.display = 'block';
+        registrationSupplierButton.style.display = 'block';
+
+      });
+
+      registrationButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        // addBranchContainer.style.display = 'block';
+        // companydetails.style.display = 'none';
+        // registrationButton.style.display = 'none';
+        // backButton.style.display = 'block';
+
+        addBranchContainer.style.display = 'block'; 
+        addSupplierContainer.style.display = 'none';
+        companydetails.style.display = 'none';
+        backButton.style.display = 'block';
+        registrationButton.style.display = 'none';
+        registrationSupplierButton.style.display = 'none';
+      });
+
+      backButton.addEventListener('click', () => {
+        // Show the registration container and hide the login container
+        // addBranchContainer.style.display = 'none';
+        // companydetails.style.display = 'block';
+        // registrationButton.style.display = 'block';
+        // backButton.style.display = 'none';
+
+        addBranchContainer.style.display = 'none'; 
+        addSupplierContainer.style.display = 'none';
+        companydetails.style.display = 'block';
+        backButton.style.display = 'none';
+        registrationButton.style.display = 'block';
+        registrationSupplierButton.style.display = 'block';
+      });
+
+      addBranchForm.addEventListener('submit', (event) => {
+        // companydetails.style.display = 'block';
+        //   addBranchContainer.style.display = 'none';
+        //   backButton.style.display = 'none';
+        //   registrationButton.style.display = 'block';
+        addBranchContainer.style.display = 'none'; 
+        addSupplierContainer.style.display = 'none';
+        companydetails.style.display = 'block';
+        backButton.style.display = 'none';
+        registrationButton.style.display = 'block';
+        registrationSupplierButton.style.display = 'block';
+
+      });
+
+      // Clear input fields on page load
+      document.getElementById('managerUsername').value = '';
+      document.getElementById('managerPassword').value = '';
+      document.getElementById('managerName').value = '';
+      document.getElementById('branchLocation').value = '';
+      document.getElementById('managerSalary').value = '';
+      document.getElementById('supplierUsername').value = '';
+      document.getElementById('supplierPassword').value = '';
+      document.getElementById('supplierName').value = '';
+
+    getValueButton.addEventListener('click', async() => {
+      const selectedValue = branchSelect.value;
+      const action = getValueButton.value;
+
+      // alert(`Selected Branch Value: ${selectedValue}`);
+      // const response = await fetch('/company', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ selectedValue,action }),
+      // });
+      // // const responseData = await response.json();
+      // // console.log(responseData.message);
+        
+      
+      const response = await fetch('/company', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ selectedValue, action }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Here you can make a decision based on the response data
+        if (data.shouldNavigate) {
+          // Navigate to another page
+          window.location.href = '/company/branch';
+        } else {
+          // Do something else
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle errors here
+      });
+    });
+  </script>
+</body>
+</html>

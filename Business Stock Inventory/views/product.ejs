@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangladesh University Of Engineering and Technology</title>
+  <link rel="stylesheet" href="/product.css"> <!-- Include the external CSS file -->
+</head>
+<body>
+  <div class="background-image"></div>
+  <header class="header">
+    <h1><%- company %></h1>
+  </header>
+  <div class="container">
+    <% for(var i = 0; i < products.length; i++) { %>
+      <div class="person-box" data-id="<%- products[i][0] %>">
+        
+          <div class="title">Category: <%- products[i][3] %></div>
+          <div class="title">Product: <%- products[i][0] %></div>
+          <!-- <div class="info-item">
+            <div class="info-label">branch ID: </div>
+            <div><%- products[i][1] %></div>
+          </div> -->
+          <!-- <div class="info-item">
+            <div class="info-label">Product: </div>
+            <div><%- products[i][0] %></div>
+          </div> -->
+          <!-- <div class="info-item">
+            <div class="info-label">company ID: </div>
+            <div><%- products[i][2] %></div>
+          </div> -->
+          <!-- <div class="info-item">
+            <div class="info-label">supplier ID: </div>
+            <div><%- products[i][4] %></div>
+          </div> -->
+          <div class="info-item">
+            <div class="info-label">Unit Price: </div>
+            <div><%- products[i][5] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Quantity </div>
+            <div><%- products[i][6] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Color </div>
+            <div><%- products[i][7] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">ProductSize</div>
+            <div><%- products[i][8] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Discount </div>
+            <div><%- products[i][9] %></div>
+          </div>
+        
+      </div>
+    <% } %>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const personBoxes = document.querySelectorAll('.person-box');
+  
+      personBoxes.forEach(box => {
+        box.addEventListener('click', async function() {
+          console.log("Clicked on person-box");
+          const productID = box.getAttribute('data-id');
+
+          const response = await fetch('/company/branch/category/product', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ productID }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            // Here you can make a decision based on the response data
+            if (data.shouldNavigate) {
+              // Navigate to another page
+              if(data.UserType=="Customer")
+              {
+                // console.log(usertype);
+                window.location.href = '/company/branch/category/product/order'; 
+              }
+              else
+              {
+                // window.location.href = '/company/branch';
+              }
+              // window.location.href = '/company/branch/category/product/order'; 
+            } else {
+              // Do something else
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            // Handle errors here
+          });
+          // try {
+          //   const response = await fetch('/branch', {
+          //     method: 'POST',
+          //     headers: {
+          //       'Content-Type': 'application/json',
+          //     },
+          //     body: JSON.stringify({ branchId }),
+          //   });
+          //   // console.log(response.ok);
+          //   if (response.ok) {
+          //     window.location.href = '/company';
+          //     // Handle success, maybe navigate to another page
+          //     // For example, window.location.href = '/another-page';
+          //   } else {
+          //     // console.log("KJHGFDS");
+          //     // Handle error
+          //     console.error('Error:', response.statusText);
+          //   }
+          // } catch (error) {
+          //   // console.log("KJHGFDS");
+          //   console.error('Error:', error);
+          // }
+        });
+      });
+    });
+  </script>
+  
+</body>
+</html>

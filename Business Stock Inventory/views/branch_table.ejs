@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangladesh University Of Engineering and Technology</title>
+  <link rel="stylesheet" href="/branch_table.css"> <!-- Include the external CSS file -->
+</head>
+<body>
+  <div class="background-image"></div>
+  <header class="header">
+    <h1><%- company %></h1>
+  </header>
+  <button  id="seeOrderList" name="seeOrderList" value="seeOrderList" class="seeOrder_List">See Order Details</button>
+  <div class="container">
+    <% for(var i = 0; i < branches.length; i++) { %>
+      <div class="person-box" data-id="<%- branches[i][0] %>">
+        
+          <div class="title"><%- branches[i][3] %> Branch</div>
+          <div class="info-item">
+            <div class="info-label">Company ID: </div>
+            <div><%- branches[i][1] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Branch ID: </div>
+            <div><%- branches[i][0] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Manager Name: </div>
+            <div><%- branches[i][2] %></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Location: </div>
+            <div><%- branches[i][3] %></div>
+          </div>
+        
+      </div>
+    <% } %>
+  </div>
+  <script>
+    var userType = "<%= userType %>";
+
+    // Get a reference to the button element
+    var button = document.getElementById("seeOrderList");
+
+    // Check the user type and show/hide the button accordingly
+    if (userType === "Customer") {
+        button.style.display = "block"; // Show the button
+    } else {
+        button.style.display = "none"; // Hide the button
+    }
+
+    button.addEventListener("click", function () {
+        // Redirect to another page when the button is clicked
+        window.location.href = "/customers_order"; // Replace "/another-page" with the desired URL
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const personBoxes = document.querySelectorAll('.person-box');
+  
+      personBoxes.forEach(box => {
+        box.addEventListener('click', async function() {
+          console.log("Clicked on person-box");
+          const branchId = box.getAttribute('data-id');
+
+          const response = await fetch('/company/branch_table', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ branchId }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            // Here you can make a decision based on the response data
+            if (data.shouldNavigate) {
+              // Navigate to another page
+              if(data.UserType=="Customer")
+              {
+                // console.log(usertype);
+                window.location.href = '/company/branch/category';
+              }
+              else
+              {
+                window.location.href = '/company/branch';
+              }
+              
+            } else {
+              // Do something else
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            // Handle errors here
+          });
+          // try {
+          //   const response = await fetch('/branch', {
+          //     method: 'POST',
+          //     headers: {
+          //       'Content-Type': 'application/json',
+          //     },
+          //     body: JSON.stringify({ branchId }),
+          //   });
+          //   // console.log(response.ok);
+          //   if (response.ok) {
+          //     window.location.href = '/company';
+          //     // Handle success, maybe navigate to another page
+          //     // For example, window.location.href = '/another-page';
+          //   } else {
+          //     // console.log("KJHGFDS");
+          //     // Handle error
+          //     console.error('Error:', response.statusText);
+          //   }
+          // } catch (error) {
+          //   // console.log("KJHGFDS");
+          //   console.error('Error:', error);
+          // }
+        });
+      });
+    });
+  </script>
+  
+</body>
+</html>
+
