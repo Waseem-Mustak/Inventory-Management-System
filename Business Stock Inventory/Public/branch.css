@@ -39,19 +39,19 @@ body {
     flex-direction: column;
     justify-content:flex-start;
     align-items: flex-start;
-    height: 60%;
+    height: 65%;
     width: 35%;
     border-radius: 10px;
     background-color: #c1d6f4; /* Darker color for the container background */
-    padding: 30px; /* Add some padding inside the container 
+    padding: 30px; /* Add some padding inside the container */
   }
   
-  .title {
+   .title {
     font-size: 24px;
     font-weight: bold;
     font-style: italic;
     margin-bottom: 30px;
-    color: #f7eab9; /* Lighter color for the title text */
+    color: #0a0908; 
     transform: translateY(0px);
   }
 

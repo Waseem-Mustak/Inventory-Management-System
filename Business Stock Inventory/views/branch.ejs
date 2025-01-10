@@ -28,17 +28,18 @@
       <tbody>
         <% for(var i=0 ; i<branch_info.length ; i++){ %>
           <tr>
-            <td>Branch ID: <%- branch_info[i][0] %></td></tr>
-           <tr> <td>Company ID: <%- branch_info[i][1] %></td></tr>
-           <tr><td>Manager Name:<%- branch_info[i][2] %></td></tr>
-           <tr> <td>Location: <%- branch_info[i][3] %></td>
+            <!-- <td>Branch ID: <%- branch_info[i][0] %></td></tr> -->
+           <!-- <tr> <td>Company ID: <%- branch_info[i][1] %></td></tr> -->
+           <tr> <td><%- branch_info[i][3] %> Branch</td>
+          <tr><td>Manager: <%- branch_info[i][2] %></td></tr>
+
           </tr>
         <% } %>
       </tbody>
     </table>
   </div>
   <div class="section-links">
-    <a href="/company/branch/category">Product Category</a>
+    <a href="/company/branch/category">See All Categories of Product</a>
     <a href="/employee">Order List</a>
     <a href="/buyinfo">Buy Info</a>
     <a href="/sellinfo">Sell Info</a>

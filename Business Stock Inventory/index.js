@@ -16,8 +16,9 @@ const order=require("./Routers/order");
 const employee=require("./Routers/employee");
 const customers_order=require("./Routers/customers_order");
 const sellinfo=require("./Routers/sellinfo");
-const buyinfo=require("./Routers/buyinfo");
- 
+const buyinfo=require("./Routers/buyinfo"); 
+const allbranchsellinfo=require("./Routers/allbranchsellinfo"); 
+const allbranchbuyinfo=require("./Routers/allbranchbuyinfo"); 
 
      
  
@@ -58,7 +59,8 @@ app.use("/employee",employee);
 app.use("/customers_order",customers_order); 
 app.use("/sellinfo",sellinfo); 
 app.use("/buyinfo",buyinfo); 
- 
+app.use("/allbranchsellinfo",allbranchsellinfo); 
+app.use("/allbranchbuyinfo",allbranchbuyinfo); 
 
  
 // connection to database

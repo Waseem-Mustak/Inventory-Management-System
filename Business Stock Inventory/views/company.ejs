@@ -21,20 +21,21 @@
     <% } %>
     <div class="section-links">
       <a href="/company/branch_table">Branches Information</a>
-      <form  class="dropdown">
+      <!-- <form  class="dropdown">
         <select id="branch-select">
           <option value="" disabled selected>Select Branch</option>
           <% for(var i = 0 ; i< branches.length ; i++){ %>
             <option name="dropdown_box_value" value="<%=branches[i][1]%>"> <%= branches[i][0] %> </option>
           <% } %>
-        </select>
+        </select> -->
         <!-- <button id="get-value-button">Get Selected Value</button> -->
-        <button type="submit" name="action" value="dropdown_value_submit" class="drop_btn" id="get-value-button">Get Selected Value</button>
-      </form>
-      <a href="employees.html">Employee Information</a>
-      <a href="customers.html">Customer Information</a>
-      <a href="suppliers.html">Supplier Information</a>
-      <a href="products.html">Product Details</a>
+        <!-- <button type="submit" name="action" value="dropdown_value_submit" class="drop_btn" id="get-value-button">Get Selected Value</button>
+      </form> -->
+      
+      <a href="/allbranchbuyinfo">Buy Info for All Branch</a>
+      <a href="/allbranchsellinfo">Sell Info for All Branch</a>
+      <!-- <a href="products.html">Product Details</a>
+      <a href="employees.html">Employee Information</a> -->
       <!-- Add more links as needed -->
     </div>
   </div>

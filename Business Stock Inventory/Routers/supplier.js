@@ -6,7 +6,7 @@ const router = express.Router();
 const {getSupplier} = require("../Controllers/supplierController");
 
 router.get("/", getSupplier);
-
+ 
 router.post("/",async function (req, res) { 
     var  buy_order_id  = req.body.buy_order_id;     
     buy_order_id = Number(buy_order_id);
@@ -28,7 +28,7 @@ router.post("/",async function (req, res) {
     var result5 = await connection.execute(query5,[], {autoCommit:true}); 
     var branch_idd=result5.rows[0][0]; 
     // console.log( branch_idd);  
-     
+    
 
     // by trigger
     // var query6 = `UPDATE BUY_ORDER SET BUY_QUANTITY=${0} WHERE BUY_ORDER_ID=${buy_order_id}`;           
@@ -40,7 +40,7 @@ router.post("/",async function (req, res) {
     var query8 = `UPDATE PRODUCT_INFO SET QUANTITY=QUANTITY+${quantityy} WHERE PRODUCT_ID='${product_idd}' AND BRANCH_ID=${branch_idd} AND COMPANY_ID=${req.session.COMPANYID}`;           
     var result8 = await connection.execute(query8,[], {autoCommit:true}); 
 
-    // Process the selected value (branchId) as needed 
+    // Process the selected value (branchId) as needed
     // For example, you can save it to a database, perform calculations, etc.
    
     // Send a response back to the client 

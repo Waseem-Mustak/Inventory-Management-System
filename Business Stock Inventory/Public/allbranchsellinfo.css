@@ -1,40 +1,49 @@
 /* Reset default margin and padding */
 body, h1, h2, h3, p, ul, li {
-  margin: 0;
-  padding: 0;
-}
-
-/* Set box-sizing to border-box for all elements */
-* {
-  box-sizing: border-box;
-}
-
-body {
-    background-color: #121314; /* Lighter color for the entire page background */
-    color: #093960; /* Darker color for the text inside the container */
-
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
     padding: 0;
   }
-  .background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url('sellinfo.png'); /* Adjust with your image path */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: flex-right;
   
+  /* Set box-sizing to border-box for all elements */
+  * {
+    box-sizing: border-box;
   }
   
+  body {
+      background-color: #121314; /* Lighter color for the entire page background */
+      color: #093960; /* Darker color for the text inside the container */
+  
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('sellinfo.png'); /* Adjust with your image path */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: flex-right;
+    
+    }
+    
+  .text-box {
+    position: relative;
+    background-color: rgba(232, 212, 195, 0.8);
+    padding: 25px;
+    transform: translateY(-00px) translateX(30px);
+    margin-top:  10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-right: 20px; /* Add spacing between the content box and person boxes */
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -43,7 +52,7 @@ body {
     height: 80%;
     width: 50%;
     border-radius: 10px;
-    /* Darker color for the container background */
+    /* background-color: #142929; Darker color for the container background */
     padding: 20px; /* Add some padding inside the container */
   }
   
@@ -52,7 +61,7 @@ body {
     font-weight: bold;
     font-style: italic;
     margin-bottom: 30px;
-    color: #1f1903; /* Lighter color for the title text */
+    color: #203843; /* Lighter color for the title text */
     transform: translateY(0px);
   }
   
@@ -140,13 +149,5 @@ body {
   }
   .approve-column:hover {
     background-color: #f3ebeb;
-    color: #fff;
-  }
-
-  .approve-column{
-    cursor: pointer;
-  }
-  .approve-column:hover {
-    background-color: #6daaec;
     color: #fff;
   }

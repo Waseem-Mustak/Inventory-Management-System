@@ -7,27 +7,34 @@
   <link rel="stylesheet" href="/category.css"> <!-- Include the external CSS file -->
 </head>
 <body>
-  <div class="background-image"></div>
-  <header class="header">
-    <h1><%- company %></h1>
-  </header>
+
+  <!--header class="header">
+    <h1><%- company %> Platforms Limited</h1>
+  </header-->
+  <div class="background-image"><div class="content-box">
+  <h1 class="header"> Product Category</h1>
+    <p>Choose Your Daily Products At Most Reliable Prices</p>
+    <div class="text-box">
+     <p>SHOP NOW</p></div>
+  </div></div>
   <div class="container">
     <% for(var i = 0; i < categorys.length; i++) { %>
       <div class="person-box" data-id="<%- categorys[i][0] %>">
         
-          <div class="title">Category: <%- categorys[i][0] %> </div>
-          <div class="info-item">
-            <div class="info-label">branch ID: </div>
-            <div><%- categorys[i][1] %></div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Category ID: </div>
-            <div><%- categorys[i][0] %></div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">company ID: </div>
-            <div><%- categorys[i][2] %></div>
-          </div>
+        <div class="title">Category: <%- categorys[i][0] %> </div>
+        <div class="info-item">
+          <div class="info-label">branch ID: </div>
+          <div><%- categorys[i][1] %></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Category ID: </div>
+          <div><%- categorys[i][0] %></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">company ID: </div>
+          <div><%- categorys[i][2] %></div>
+        </div>
+       
          
         
       </div>

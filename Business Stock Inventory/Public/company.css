@@ -15,27 +15,39 @@ body {
     background-color: #121314;
     margin: 0;
     padding: 0;
-    background: url('company.png') no-repeat center center fixed;
+    background: url('dashboard.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-left: -200px;
   }
   
   .dashboard {
-    max-width: 600px;
+    display: flex-start;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
+    height: 65%;
+    width: 35%;
+    border-radius: 10px;
+    background-color: #c1d6f4; /* Darker color for the container background */
+    padding: 30px;
+    
+    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #5f6060;
+    background-color: #c8d2f3;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(184, 189, 254, 0.71);
+    height: 340px;
   }
   
   h1 {
     text-align: center;
     font-style: italic;
-    color: #f7eab9;
+    color: #020d25;
   }
   
   .section-links {
@@ -44,9 +56,9 @@ body {
   
   .section-links a {
     display: block;
-    margin: 10px 0;
+    margin: 15px 0;
     padding: 10px;
-    background-color: #3498db;
+    background-color: #7498eb;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -55,7 +67,7 @@ body {
   }
   
   .section-links a:hover {
-    background-color: #2980b9;
+    background-color: #2f3bdc;
   }
   
   #registrationButton {
@@ -69,7 +81,7 @@ body {
     top: 10px;
     right: 10px;
     z-index: 1000;
-    background-color: #3498db;
+    background-color: #a0b5f4;
     cursor: pointer;
     padding: 10px 20px; /* Adjust padding to make the button wider */
     font-size: 14px; /* Increase font size for better visibility */
@@ -80,8 +92,8 @@ body {
   }
   
   #registrationButton:hover {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #7daef3;
+    color: #0d0625;
   }
 
   #registrationSupplierButton {
@@ -95,7 +107,7 @@ body {
     top: 10px;
     right: 170px;
     z-index: 1000;
-    background-color: #3498db;
+    background-color: #a0b5f4;
     cursor: pointer;
     padding: 10px 20px; /* Adjust padding to make the button wider */
     font-size: 14px; /* Increase font size for better visibility */
@@ -106,7 +118,7 @@ body {
   }
   
   #registrationSupplierButton:hover {
-    background-color: #007bff;
+    background-color: #7daef3;
     color: #fff;
   }
   .btn_back {
@@ -120,7 +132,7 @@ body {
     top: 10px;
     right: 10px;
     z-index: 1000;
-    background-color: #3498db;
+    background-color: #3447db;
     cursor: pointer;
     padding: 10px 20px; /* Adjust padding to make the button wider */
     font-size: 14px; /* Increase font size for better visibility */
@@ -131,23 +143,23 @@ body {
   }
   
   .btn_back:hover {
-    background-color: #007bff;
+    background-color: #150f92;
     color: #fff;
   }
 
   /* Additional styles for add-branch-container */
   
 .add-branch-container {
-  background-color: #5f6060;
+  background-color: #9cb0e8;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(197, 199, 213, 0.677);
   width: 300px;
   max-width: 100%;
   display: block;
   margin: 20px auto; /* Adjust margin for spacing */
   text-align: left; /* Align text to the left */
-  color: #fff;
+  color: #070b40;
   display: block; /* Hide the container initially */
 }
 
@@ -178,14 +190,14 @@ body {
   padding: 10px;
   border: 1px solid #f5efef;
   border-radius: 3px;
-  background-color: #272828;
-  color: #fff;
+  background-color: #c2d7ec;
+  color: #04082b;
   margin-bottom: 10px; /* Add margin to separate input fields */
 }
 
 .add-branch-container .btn {
-  background-color: #3498db;
-  color: #fff;
+  background-color: #9cb0e8;
+  color: #161051;
   padding: 10px 15px;
   border: none;
   border-radius: 3px;

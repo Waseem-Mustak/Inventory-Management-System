@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="logIn.css">
 </head> 
 <body>
+  <div class="background-image"></div>
+  <div class="header-container">
+    <h1 class="header">Business Inventory Plus</h1>
+    
+  </div>
   <!-- Button to toggle registration form display -->
   <button id="registrationButton">Register New Company</button>
   <button id="registrationCustomerButton">Register As Customer</button>
@@ -73,7 +78,7 @@
       <!-- Input for company ID -->
       <div class="form-group">
         <label for="companyId">Company ID:</label>
-        <input type="number" name="companyId" id="companyId" placeholder="Company ID" required>
+        <input type="number" name="companyId" id="companyId" placeholder="Company ID" min="0" required>
       </div>
       <!-- Registration button -->
       <button type="submit" name="action" value="reg-user" class="btn">Register</button>
@@ -105,7 +110,7 @@
       <!-- Input for company ID -->
       <div class="form-group">
         <label for="companyId_Customer">Company ID:</label>
-        <input type="number" name="companyId_Customer" id="companyId_Customer" placeholder="Company ID" required>
+        <input type="number" name="companyId_Customer" id="companyId_Customer" placeholder="Company ID" min="0" required>
       </div>
       <!-- Registration button -->
       <button type="submit" name="action" value="reg-customer-user" class="btn">Register</button>

@@ -1,9 +1,9 @@
 const oracle = require("oracledb");
 
 
-
+ 
 async function getProduct(req,res){
-    // res.send("lkjh");
+    // res.send("lkjh"); 
     // res.render("branch");
     var query=`select * from Product_Info WHERE COMPANY_ID= ${req.session.COMPANYID} AND BRANCH_ID= ${req.session.BRANCHID} AND CATEGORY_ID= '${req.session.CATEGORYID}'`;
     var result = await connection.execute(query,[], {autoCommit:true});

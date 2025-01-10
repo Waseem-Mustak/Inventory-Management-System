@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="/product.css"> <!-- Include the external CSS file -->
 </head>
 <body>
+<div class="header-container">
+  <h1 class="header">Choose Your Desired Product</h1>
+    <!--h1><%- company %> Platforms Limited</h1-->
+</div>
+  </div>
   <div class="background-image"></div>
-  <header class="header">
-    <h1><%- company %></h1>
-  </header>
   <div class="container">
     <% for(var i = 0; i < products.length; i++) { %>
       <div class="person-box" data-id="<%- products[i][0] %>">

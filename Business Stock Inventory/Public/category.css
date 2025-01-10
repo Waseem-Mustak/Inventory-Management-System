@@ -18,29 +18,33 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #f5f1f1; /* Lighter color for the entire page background */
+  background-color: #d7f1fc; /* Lighter color for the entire page background */
   color: #1c0404; /* Darker color for the text inside the container */
 }
 
 .background-image {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  height: 40%;
+  height: 100%;
   z-index: -1;
+  margin-top: -50px;
   background-image: url('category.png'); /* Adjust with your image path */
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center right;
+  
+
 }
 
+
 .header {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: bold;
   font-style: italic;
-  color: #2b0303;
-  margin-top: 20px;
+  color: #091142;
+  margin-top: 5px;
 }
 category{
 
@@ -57,6 +61,101 @@ category{
   /*border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }*/
+
+.content-box {
+  top: 0;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 40%;
+  margin-top: 180px;
+  font-size: 20;
+  
+  background-color: rgba(217, 233, 241, 0.862);
+  padding: 20px;
+ /* Adjust the width of the content box */
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-right: 20px; /* Add spacing between the content box and person boxes */
+}
+/*.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+  background-color: rgba(95, 96, 96, 0.8); /* Add background color to the container */
+  /*border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow flex items to wrap to the next line 
+  justify-content: space-between;
+  /* flex-direction: column; */
+  /* justify-content: flex-start; Align boxes to the left side 
+  align-items: flex-start; /* Align boxes to the left side 
+  width: 80%;
+  padding: 20px;
+}*/
+
+
+
+.text-box {
+  position: relative;
+  background-color: rgba(144, 206, 251, 0.8);
+  padding: 25px;
+
+  margin-top:  10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-right: 20px; /* Add spacing between the content box and person boxes */
+}
+
+:root {
+  --image-url: url('category1.png'); /* Replace with the actual image URL */
+}
+
+/* Add styling for the image box */
+.image-box {
+  flex: 1; /* Let the image box grow to occupy available space */
+  padding: 10px;
+  background-image: var(--image-url); /* Use the CSS variable for background image */
+  background-size: cover;
+  background-size: 150%; /* Adjust background image size as needed */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-position: center; 
+  width:100%;
+  height:90%;/* Center the background image */
+}
+
+/* Add styling for the info box */
+.info-box {
+  flex: 2; /* Let the info box grow to occupy available space */
+  background-color: #0f293d;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container {
   display: flex;
   flex-wrap: wrap; /* Allow flex items to wrap to the next line */
@@ -65,32 +164,53 @@ category{
   /* justify-content: flex-start; Align boxes to the left side */
   align-items: flex-start; /* Align boxes to the left side */
   width: 80%;
-  padding: 20px;
+  padding: 10px;
+
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
+/*.person-box {
+  background-color: #b0dbee;
+
+  padding: 15px; /* Adjust padding for smaller boxes 
+  margin: 5px 0 150px;
+  width: 80%;
+  
+  /* Adjust width for smaller boxes 
+  max-width: 400px; /* Add max-width to prevent boxes from becoming too wide 
+  cursor: pointer; /* Set cursor to pointer on hover 
+  transition: background-color 0.3s, box-shadow 0.3s; /* Add transition effect for smoother hover 
+  width: calc(120% - 20px); /* Adjust the width for two boxes with space between 
+
+
+}*/
 .person-box {
-  background-color: #1492ed;
-  border-radius: 10px;
+  background-color: #9ed0f6;
+ 
   padding: 10px; /* Adjust padding for smaller boxes */
-  margin: 10px 0;
-  width: 80%; /* Adjust width for smaller boxes */
-  max-width: 400px; /* Add max-width to prevent boxes from becoming too wide */
+  margin: 5px 0;
+  width: 80%;
+  height: 250px;
+  /* Adjust width for smaller boxes */
+  max-width: 250px; /* Add max-width to prevent boxes from becoming too wide */
   cursor: pointer; /* Set cursor to pointer on hover */
   transition: background-color 0.3s, box-shadow 0.3s; /* Add transition effect for smoother hover */
-  width: calc(50% - 10px); /* Adjust the width for two boxes with space between */
-  margin: 10px 0;
+   /* Adjust the width for two boxes with space between */
+ 
 }
 
+
+
 .person-box:hover {
-  background-color: #106bad; /* Darken background color on hover */
+  background-color: #d3f2f9; /* Darken background color on hover */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
 }
 
-
-
 .title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #240608;
   margin-bottom: 10px;
 }

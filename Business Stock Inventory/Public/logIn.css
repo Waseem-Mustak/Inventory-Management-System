@@ -10,17 +10,68 @@ body, h1, h2, h3, p, ul, li {
 }
 
 /* Apply basic styling to body */
-body {
+/*body {
   font-family: Arial, sans-serif;
   background-color: #121314;
   margin: 0;
   padding: 0;
-  background: url('loginpage.png') no-repeat center center fixed;
-  background-size: cover;  display: flex;
+  background: url('.png') no-repeat center center fixed;
+  background-size: contain;  display: flex;
   justify-content: center;
+
   align-items: center;
   height: 100vh;
+}*/
+body {
+  background-color: #c7c1ac; /* Lighter color for the entire page background */
+  color: #093960; /* Darker color for the text inside the container */
+
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
+
+.background-image {
+  position: fixed;
+  top: 0;
+
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('login.png'); /* Adjust with your image path */
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
+
+}
+
+.header-container {
+  background-color: #383321; /* Black background color for the header container */
+  padding: 10px; /* Adjust padding for the header container */
+  text-align:center;
+  position: absolute;
+  top: 400px;
+  left:110px;
+  width:20%; 
+  margin-left: 150px;/* Center the text horizontally within the container */
+}
+.header {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  color: #f3ea9f;
+  margin-top: 5px 0;
+}
+
+
+
+
 
 /* Styling for registration button */
 #registrationButton {
@@ -34,7 +85,7 @@ body {
   top: 10px;
   right: 10px;
   z-index: 1000;
-  background-color: #3498db;
+  background-color: #5e8a75;
   cursor: pointer;
   padding: 10px 20px; /* Adjust padding to make the button wider */
   font-size: 14px; /* Increase font size for better visibility */
@@ -45,7 +96,7 @@ body {
 }
 
 #registrationButton:hover {
-  background-color: #007bff;
+  background-color: #365445;
   color: #fff;
 }
 
@@ -60,7 +111,7 @@ body {
   top: 10px;
   right: 210px;
   z-index: 1000;
-  background-color: #3498db;
+  background-color: #5e8a75;
   cursor: pointer;
   padding: 10px 20px; /* Adjust padding to make the button wider */
   font-size: 14px; /* Increase font size for better visibility */
@@ -71,7 +122,7 @@ body {
 }
 
 #registrationCustomerButton:hover {
-  background-color: #007bff;
+  background-color: #365445;
   color: #fff;
 }
 
@@ -86,7 +137,7 @@ body {
   top: 10px;
   right: 10px;
   z-index: 1000;
-  background-color: #3498db;
+  background-color: #dde33e;
   cursor: pointer;
   padding: 10px 20px; /* Adjust padding to make the button wider */
   font-size: 14px; /* Increase font size for better visibility */
@@ -97,7 +148,7 @@ body {
 }
 
 .btn_back:hover {
-  background-color: #007bff;
+  background-color: #575e24;
   color: #fff;
 }
 
@@ -105,16 +156,18 @@ body {
 .login-container,
 .registration-customer-container,
 .registration-container {
-  background-color: #5f6060;
-  padding: 20px;
+  background-color: #5e8a75;
+  padding: 30px;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(225, 219, 204, 0.2);
   width: 300px;
   max-width: 100%;
+  height: 75%;
   display: block;
   margin: 0 auto;
   text-align: center;
-  color: #fff;
+  color: #181003;
+  margin-right: 50px;
 }
 
 /* Form element styling */
@@ -139,8 +192,8 @@ input[type="number"] {
 }
 
 .btn {
-  background-color: #3498db;
-  color: #fff;
+  background-color: #f2e398;
+  color: #1e1101;
   padding: 10px 15px;
   border: none;
   border-radius: 3px;
@@ -149,7 +202,7 @@ input[type="number"] {
 }
 
 .btn:hover {
-  background-color: #2980b9;
+  background-color: #b9aa29;
 }
 
 

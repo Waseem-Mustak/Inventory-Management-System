@@ -3,9 +3,9 @@ const express = require("express");
 
 const router = express.Router();
 
-const {getBuyinfo} = require("../Controllers/buyinfoController");
+const {getallSellinfo} = require("../Controllers/allbranchsellinfoController");
 
-router.get("/", getBuyinfo);
+router.get("/", getallSellinfo);
 
 // router.post("/",async function (req, res) { 
 //     var  buy_order_id  = req.body.buy_order_id;     

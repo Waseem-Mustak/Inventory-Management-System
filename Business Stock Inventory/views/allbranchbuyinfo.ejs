@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bangladesh University Of Engineering and Technology</title>
-  <link rel="stylesheet" href="/supplier.css"> <!-- Include the external CSS file -->
+  <link rel="stylesheet" href="/allbranchbuyinfo.css"> <!-- Include the external CSS file -->
 </head>
 <body>
   <div class="background-image"></div>
@@ -20,27 +20,30 @@
           <th>Product</th>
           <th>Category</th>
           <th>Branch</th>
-          <th>Order Date</th>
+          <!-- <th>Branch</th> -->
+          <!-- <th>Order Date</th> -->
           <th>Quantity</th>
-          <th>Approve</th>
+          <th>Supply Date</th>
+          <th>Supplier</th>
         </tr>
       </thead>
       <tbody>
         <% for(var i=0 ; i<order_request.length ; i++){ %>
           <tr>
+            <td> <%- order_request[i][0] %></td>
             <td> <%- order_request[i][1] %></td>
             <td> <%- order_request[i][2] %></td>
             <td> <%- order_request[i][3] %></td>
             <td> <%- order_request[i][4] %></td>
             <td> <%- order_request[i][5] %></td>
-            <td class="approve-column" data-branch-id="<%- order_request[i][0] %>">Approve</td>
+            <!-- <td class="approve-column" data-branch-id="<%- order_request[i][0] %>">Approve</td> -->
           </tr>
         <% } %>
       </tbody>
     </table>
   </div>
   </div>
-    <script>
+    <!-- <script>
         const approveColumns = document.querySelectorAll(".approve-column");
 
         approveColumns.forEach(column => {
@@ -93,7 +96,7 @@
                     // }
             });
         });
-    </script>
+    </script> -->
 
   <!-- <script>
     const approveColumns = document.querySelectorAll(".approve-column");

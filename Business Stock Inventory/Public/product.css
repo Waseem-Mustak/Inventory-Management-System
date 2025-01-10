@@ -1,136 +1,146 @@
 /* Reset default margin and padding */
 body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    color: #21466f;
-    padding: 0;
-  }
-  /* Set box-sizing to border-box for all elements */
-  * {
-    box-sizing: border-box;
-  }
-  
-  /* Apply basic styling to body with background image */
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f1f1; /* Lighter color for the entire page background */
-    color: #1c0404; /* Darker color for the text inside the container */
-  }
-  
-  .background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    z-index: -1;
-    background-image: url('employee.png'); /* Adjust with your image path */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .header {
-    font-size: 24px;
-    font-weight: bold;
-    font-style: italic;
-    color: #2b0303;
-    margin-top: 20px;
-  }
-  category{
-  
-    margin-top: 15rem;
-  }
-  /*.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    padding: 20px;
-    background-color: rgba(95, 96, 96, 0.8); /* Add background color to the container */
-    /*border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }*/
-  .container {
-    display: flex;
-    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
-    justify-content: space-between;
-    /* flex-direction: column; */
-    /* justify-content: flex-start; Align boxes to the left side */
-    align-items: flex-start; /* Align boxes to the left side */
-    width: 80%;
-    padding: 20px;
-  }
-
-  .person-box {
-    background-color: #1492ed;
-    border-radius: 10px;
-    padding: 10px; /* Adjust padding for smaller boxes */
-    margin: 10px 0;
-    width: 80%; /* Adjust width for smaller boxes */
-    max-width: 400px; /* Add max-width to prevent boxes from becoming too wide */
-    cursor: pointer; /* Set cursor to pointer on hover */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Add transition effect for smoother hover */
-    width: calc(50% - 10px); /* Adjust the width for two boxes with space between */
-    margin: 10px 0;
+  margin: 0;
+  color: #21466f;
+  padding: 0;
 }
-  
-  .person-box:hover {
-    background-color: #106bad; /* Darken background color on hover */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
-  }
+/* Set box-sizing to border-box for all elements */
+* {
+  box-sizing: border-box;
+}
 
+/* Apply basic styling to body with background image */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #c9dae2; /* Lighter color for the entire page background */
+  color: #1c0404; /* Darker color for the text inside the container */
+}
 
+.background-image {
+  position: relative;
+  top: 0;
+
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  margin-top: -10px;
+  background-image: url('product2.png'); /* Adjust with your image path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center ;
   
-  
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    font-style: italic;
-    color: #240608;
-    margin-bottom: 10px;
-  }
-  
-  .info-label {
-    font-weight: bold;
-  }
-  
-  .info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .info-label {
-    width: 120px;
-    margin-right: 15px;
-  }
-  
-  .links {
-    margin-top: 20px;
-  }
-  
-  .links a {
-    text-decoration: none;
-    color: #007BFF;
-    margin-right: 10px;
-    font-size: 18px;
-  }
-  
-  .log-out-button {
-    margin-top: 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
+
+}
+.header-container {
+  background-color: #000; /* Black background color for the header container */
+  padding: 10px; /* Adjust padding for the header container */
+  text-align: left;
+  position: absolute;
+  top: 13px;;
+  left:0;
+  width:50%; /* Center the text horizontally within the container */
+}
+
+.header {
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  color: #e7eff2;
+  margin-top: 5px 0;
+}
+category{
+
+  margin-top: 15rem;
+}
+/*.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+  background-color: rgba(95, 96, 96, 0.8); /* Add background color to the container */
+  /*border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}*/
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+  justify-content: space-between;
+  /* flex-direction: column; */
+  /* justify-content: flex-start; Align boxes to the left side */
+  align-items: flex-start; /* Align boxes to the left side */
+  width: 80%;
+  padding: 20px;
+  height: 60%;
+}
+.person-box {
+  background-color: #dff4fc;
+ 
+  padding: 10px; /* Adjust padding for smaller boxes */
+  margin: 5px 0;
+  width: 40%;
+  height: 90%; /* Adjust width for smaller boxes */
+  max-width: 250px; /* Add max-width to prevent boxes from becoming too wide */
+  cursor: pointer; /* Set cursor to pointer on hover */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Add transition effect for smoother hover */
+   /* Adjust the width for two boxes with space between */
+ 
+}
+
+.person-box:hover {
+  background-color: #d3f2f9; /* Darken background color on hover */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #240608;
+  margin-bottom: 10px;
+}
+
+.info-label {
+  font-weight: bold;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info-label {
+  width: 120px;
+  margin-right: 15px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #007BFF;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.log-out-button {
+  margin-top: 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
