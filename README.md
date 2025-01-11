@@ -104,15 +104,127 @@ Detailed relationships between tables:
 
 ➡️ [View complete ERD](https://github.com/Waseem-Mustak/Inventory-Management-System/blob/main/ERD.pdf)
 
+
+
+## Features
+
+### Multi-Level User Management
+- **Owner Portal**
+  - Create and manage multiple companies
+  - Monitor company-wide performance
+  - Set system-wide policies
+
+- **Manager Dashboard**
+  - Branch-specific oversight
+  - Staff management capabilities
+  - Purchase order authorization
+  - Real-time inventory monitoring
+
+- **Employee Access**
+  - Process customer orders
+  - Update inventory records
+  - Handle sales transactions
+
+### Inventory Control System
+- **Product Management**
+  - Categorize products by type and branch
+  - Track quantities and locations
+  - Monitor stock levels
+  - Set price points and discounts
+  - Color and size variant tracking
+
+- **Stock Monitoring**
+  - Real-time inventory updates
+  - Low stock alerts
+  - Branch-wise stock distribution
+  - Product movement tracking
+
+### Order Processing System
+- **Customer Orders**
+  - Order creation and tracking
+  - Status updates
+  - Payment method processing
+  - Delivery status monitoring
+
+- **Purchase Orders**
+  - Supplier order management
+  - Order quantity tracking
+  - Supply date monitoring
+  - Payment processing
+
+### Sales Management
+- **Transaction Processing**
+  - Record sales transactions
+  - Process multiple payment methods
+  - Generate transaction records
+  - Track sales by branch
+
+- **Customer Management**
+  - Customer profile maintenance
+  - Purchase history tracking
+  - Branch-wise customer database
+  - Customer relationship management
+
+### Supply Chain Management
+- **Supplier Relations**
+  - Supplier profile management
+  - Contact information tracking
+  - Supply history monitoring
+  - Price and payment tracking
+
+- **Purchase Management**
+  - Buy order creation
+  - Supply delivery tracking
+  - Payment processing
+  - Supplier performance monitoring
+
+### Branch Management
+- **Location Control**
+  - Multiple branch support
+  - Branch-specific inventory
+  - Location-based management
+  - Branch performance tracking
+
+### Security and Access Control
+- **User Authentication**
+  - Secure login system
+  - Role-based access control
+  - Password protection
+  - User activity tracking
+
+### Reporting and Analytics
+- **Business Intelligence**
+  - Sales performance tracking
+  - Inventory level monitoring
+  - Order fulfillment rates
+  - Supplier performance metrics
+
+### Data Integrity
+- **Database Management**
+  - Referential integrity
+  - Data consistency
+  - Transaction management
+  - Backup and recovery
+
+### Multi-Company Support
+- **Organization Management**
+  - Multiple company support
+  - Company-wise data isolation
+  - Cross-branch operations
+  - Scalable architecture
+
+
+
 ## Technologies Used
 - **Node.js**: JavaScript runtime for building the server-side logic.
 - **HTML**: Used for structuring the user interface.
 - **CSS**: For styling the front-end.
 - **OracleDB**: The database management system used to store and manage data.
 
+
+
 ## Setup and Run  
 Follow these steps to set up and run the application locally:  
-
 
 ### Clone the repository  
 ```bash  
@@ -145,37 +257,3 @@ node index.js
 
 ### Access the application in your browser at  
 http://localhost:3000  
-
-
-
-## Features
-
-### 1. **User Roles**:
-   - **Owner**: 
-     - Can add new branches, managers, employees, and suppliers.
-     - Has full access to all branch details, including the number of products, sold items, and order information across all branches.
-   - **Manager**:
-     - Manages a single branch.
-     - Can receive orders and mark them as delivered.
-     - Views products and orders specific to their branch.
-   - **Employee**:
-     - Can track products and orders within their branch.
-   - **Customer**:
-     - Can place orders and view their order history.
-   - **Supplier**:
-     - Supplies products and views relevant supply details.
-
-### 2. **Company Structure**:
-   - **Company**: A company can have multiple branches.
-   - **Branch**: Each branch can have different product categories and products.
-   - **Product Category**: Categories to organize products (e.g., Electronics, Furniture).
-   - **Product**: Individual items available for sale in various categories.
-
-### 3. **Order Management**:
-   - Customers can place orders for products.
-   - Managers and employees can view and track orders.
-   - Owners can monitor orders across all branches.
-
-### 4. **Product Management**:
-   - Managers and employees can track and manage product stock.
-   - Suppliers can provide new products to the system.
