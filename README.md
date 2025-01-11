@@ -85,7 +85,7 @@ The primary goal of this project is to learn SQL by using OracleDB. By building 
    - Supplier_Id (PK), Company_Id (FK)
    - Records Supplier_Name and Contact_Number
 
-➡️ [View complete schema details](schema.sql)
+➡️ [View complete schema details](https://github.com/Waseem-Mustak/Inventory-Management-System/blob/main/schema.sql)
 
 
 
@@ -102,48 +102,40 @@ Detailed relationships between tables:
 - Order_Details (M) ← Customer_Info (1)
 - Product_Info (M) ← Supplier_Info (1)
 
-➡️ [View complete ERD](erd.pdf)
-
-### Key Constraints
-- **Primary Keys**: Unique identifiers for each table (single or composite)
-- **Foreign Keys**: Maintain referential integrity between related tables
-- **NOT NULL**: Required on critical fields:
-  - All ID fields
-  - Names (Owner_Name, Company_Name, etc.)
-  - Key tracking fields (dates, quantities)
-- **Composite Keys**: Used in:
-  - Product_Category (Category_Id, Branch_Id, Company_Id)
-  - Product_Info (Product_Id, Branch_Id, Company_Id)
-
-## Technical Details
-
-### Data Types Implementation
-- **VARCHAR2(10/12/20)**: Used for:
-  - IDs (User_Id, Manager_Id, etc.)
-  - Names and descriptive fields
-  - Status and type fields
-- **NUMBER**: Used for:
-  - Sequential IDs (Company_Id, Branch_Id)
-  - Financial values (Salary, Unit_Price)
-  - Quantities and counts
-- **DATE**: Used for:
-  - Order_Date
-  - Supply_Date
-  - Buy_Order_Date
-  - Sell_Date
-
-### Security Features
-- **User Authentication**:
-  - Secure password storage in User_Info
-  - User type segregation for access control
-- **Data Isolation**:
-  - Company-specific data separation
-  - Branch-level access controls
-- **Transaction Security**:
-  - Order tracking with status management
-  - Payment method validation
+➡️ [View complete ERD](https://github.com/Waseem-Mustak/Inventory-Management-System/blob/main/ERD.pdf)
 
 
+
+## Setup and Run  
+Follow these steps to set up and run the application locally:  
+
+```bash  
+# Clone the repository  
+git clone https://github.com/Waseem-Mustak/Inventory-Management-System.git  
+cd Inventory-Management-System  
+
+# Ensure OracleDB is running on your system or server.  
+# Execute the schema.sql file to set up the database schema.  
+sql  
+@path/to/schema.sql  
+
+# Update the OracleDB connection configuration in the project (e.g., config/db.js).  
+javascript  
+module.exports = {  
+    user: 'your-username',  
+    password: 'your-password',  
+    connectString: 'host:port/SID',  
+};  
+
+# Install dependencies  
+npm install  
+
+# Run the application 
+cd "Business Stock Inventory" 
+node index.js  
+
+# Access the application in your browser at  
+http://localhost:3000  
 
 
 
