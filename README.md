@@ -85,7 +85,7 @@ The primary goal of this project is to learn SQL by using OracleDB. By building 
    - Supplier_Id (PK), Company_Id (FK)
    - Records Supplier_Name and Contact_Number
 
-➡️ [View complete schema details](https://github.com/Waseem-Mustak/Inventory-Management-System/blob/main/schema.sql)
+➡️ [View complete Schema](https://github.com/Waseem-Mustak/Inventory-Management-System/blob/main/schema.sql)
 
 
 
@@ -104,24 +104,27 @@ Detailed relationships between tables:
 
 ➡️ [View complete ERD](https://github.com/Waseem-Mustak/Inventory-Management-System/blob/main/ERD.pdf)
 
-
+## Technologies Used
+- **Node.js**: JavaScript runtime for building the server-side logic.
+- **HTML**: Used for structuring the user interface.
+- **CSS**: For styling the front-end.
+- **OracleDB**: The database management system used to store and manage data.
 
 ## Setup and Run  
 Follow these steps to set up and run the application locally:  
 
 
-# Clone the repository  
+### Clone the repository  
 ```bash  
 git clone https://github.com/Waseem-Mustak/Inventory-Management-System.git  
 cd Inventory-Management-System  
 ```
 
-# Ensure OracleDB is running on your system or server.  
-# Execute the schema.sql file to set up the database schema.  
-sql  
-@path/to/schema.sql  
+### Ensure OracleDB is running on your system or server.  
+### Execute the schema.sql file to set up the database schema.  
+➡️ [Sql Schema](https://github.com/Waseem-Mustak/Inventory-Management-System/blob/main/schema.sql) 
 
-# Update the OracleDB connection configuration in the project (e.g., config/db.js).  
+### Update the OracleDB connection configuration in the project (e.g., config/db.js).  
 javascript  
 module.exports = {  
     user: 'your-username',  
@@ -129,18 +132,19 @@ module.exports = {
     connectString: 'host:port/SID',  
 };  
 
-# Install dependencies  
-npm install  
+### Install dependencies  
+```bash
+npm install
+```  
 
-# Run the application 
+### Run the application 
+```bash
 cd "Business Stock Inventory" 
 node index.js  
+```
 
-# Access the application in your browser at  
+### Access the application in your browser at  
 http://localhost:3000  
-
-
-
 
 
 
@@ -175,31 +179,3 @@ http://localhost:3000
 ### 4. **Product Management**:
    - Managers and employees can track and manage product stock.
    - Suppliers can provide new products to the system.
-
-## Schema and ERD
-
-The system uses a relational database, and the following entities are represented:
-
-- **Users**: Stores information for different roles (Owner, Manager, Employee, Customer, Supplier).
-- **Companies**: Contains details about the companies in the system.
-- **Branches**: Information about the company's branches.
-- **Products**: Product details, organized by category and linked to branches.
-- **Orders**: Information about customer orders.
-- **Suppliers**: Details of suppliers providing products.
-
-You can view the **Entity-Relationship Diagram (ERD)** and **Database Schema** here:  
-[View ERD Diagram](link-to-erd-diagram)
-
-## Technologies Used
-- **Node.js**: JavaScript runtime for building the server-side logic.
-- **HTML**: Used for structuring the user interface.
-- **CSS**: For styling the front-end.
-- **OracleDB**: The database management system used to store and manage data.
-
-## Installation
-
-To get started with the project, follow these steps:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Waseem-Mustak/Inventory-Management-System.git
