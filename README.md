@@ -109,10 +109,12 @@ Detailed relationships between tables:
 ## Setup and Run  
 Follow these steps to set up and run the application locally:  
 
-```bash  
+
 # Clone the repository  
+```bash  
 git clone https://github.com/Waseem-Mustak/Inventory-Management-System.git  
 cd Inventory-Management-System  
+```
 
 # Ensure OracleDB is running on your system or server.  
 # Execute the schema.sql file to set up the database schema.  
